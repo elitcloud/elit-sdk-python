@@ -16,3 +16,5 @@ deploy:
   on:
     tags: true
     branch: master
+notifications:
+  email: false
