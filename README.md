@@ -4,7 +4,7 @@ This repository is the elit SDK for python language. Your NLP tools implemented 
 
 ## Get Started
 
-The minimum required version of python is python 3.  
+The minimum required version of python is python 3.4.  
 
 ### Install
 
