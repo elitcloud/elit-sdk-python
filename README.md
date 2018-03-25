@@ -14,18 +14,4 @@ pip install elitsdk
 
 ### Example Usage:
 
-```python
-from elitsdk.sdk import ElitSDK
-
-
-class Example(ElitSDK):
-    def __init__(self):
-        super()
-    
-    def decode(self, input_data, *args, **kwargs):
-        pass
-     
-    def load_model(self, model_root):
-        pass
-```
-
+Please check [https://github.com/elitcloud/elit-sdk-python/tree/master/example](https://github.com/elitcloud/elit-sdk-python/tree/master/example)
