@@ -456,3 +456,4 @@ paket-files/
 # tools/**
 # !tools/packages.config
 /elitsdk/version.py
+/.pytest_cache/
