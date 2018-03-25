@@ -33,7 +33,7 @@ class ElitSDK(abc.ABC):
         :param kwargs: kwargs for the decode method if needed
         :return:
         """
-        return NotImplemented
+        raise NotImplementedError("Not implemented")
 
     @abc.abstractmethod
     def load_model(self, model_root, *args, **kwargs):
@@ -45,7 +45,7 @@ class ElitSDK(abc.ABC):
         :param kwargs: kwargs for the load_model method if needed
         :return: None
         """
-        pass
+        raise NotImplementedError("Not implemented")
 
     @abc.abstractmethod
     def train(self, *args, **kwargs):
@@ -56,7 +56,7 @@ class ElitSDK(abc.ABC):
         :param kwargs: kwargs for the load_model method if needed
         :return:
         """
-        pass
+        raise NotImplementedError("Not implemented")
 
     @abc.abstractmethod
     def save_model(self, *args, **kwargs):
@@ -67,4 +67,4 @@ class ElitSDK(abc.ABC):
         :param kwargs: kwargs for the save_model method if needed
         :return:
         """
-        pass
+        raise NotImplementedError("Not implemented")
