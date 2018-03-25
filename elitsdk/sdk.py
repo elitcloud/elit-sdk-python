@@ -27,6 +27,7 @@ class ElitSDK(abc.ABC):
     @abc.abstractmethod
     def decode(self, input_data, *args, **kwargs):
         """
+        Implement the decode method.
         :param input_data: expect input for the decode function
         :param args: args for the decode method if needed
         :param kwargs: kwargs for the decode method if needed
@@ -35,10 +36,35 @@ class ElitSDK(abc.ABC):
         return NotImplemented
 
     @abc.abstractmethod
-    def load_model(self, model_root):
+    def load_model(self, model_root, *args, **kwargs):
         """
-        Implement the method how to load your models.
+        Implement the method of how to load your model(s).
+        If you don't need this method, leave it as pass.
         :type model_root: str
-        :param model_root: the root directory contains all models you need
+        :param args: args for the load_model method if needed
+        :param kwargs: kwargs for the load_model method if needed
         :return: None
         """
+        pass
+
+    @abc.abstractmethod
+    def train(self, *args, **kwargs):
+        """
+        Implement the train method.
+        If you don't need this method, leave it as pass.
+        :param args: args for the load_model method if needed
+        :param kwargs: kwargs for the load_model method if needed
+        :return:
+        """
+        pass
+
+    @abc.abstractmethod
+    def save_model(self, *args, **kwargs):
+        """
+        Implement the method of how to save your model(s).
+        If you don't need this method, leave it as pass.
+        :param args: args for the save_model method if needed
+        :param kwargs: kwargs for the save_model method if needed
+        :return:
+        """
+        pass
