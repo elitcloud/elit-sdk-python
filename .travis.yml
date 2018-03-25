@@ -9,3 +9,11 @@ install:
 - pip install .
 script:
 - pytest
+deploy:
+  provider: pypi
+  user: emorynlp
+  password:
+    secure: GZf6HYY5eYjFeRjGe3SOK+V0k4sp2jhsONQOQnoLypS+jgi748pvL809aBAYi6duAMt46b6B5hMIWdo98Br3V11xzIgQ3RIdBR0ms8/DVVupMbZ7B711IwhWn910n1azBYYCINeJwfWGd7VkP/FkfE5odHP2F/gfefJuy73J83eu7aQ9Ck3ye/+n+mvrBpRmd+rsQii92c3byW/Vcr0RAG+8F3JG9XVVL/ndbnRTm7glqnBqbv09L7FpZTph+rlJAYmqWFSytPeV1tBYqPOu02nd9WeLLQQELP0bm3pSWtcVpYXLiDWNZhzdRA5uI99HqCTEUfhx6d5vyzh6BWhLzKP9+xkOaNF40pKIpD0XfknzBW7iK4wx033+yd64Gwr5e5uwbirR93obzp1AzsKHi2yGqIaa74cYRUFQQ2M+kEw7KZRFsZefrA7cM+sUn7okBQ+lasSt29xKzZeR22d0n127FgAs2RUPFcZhN3m4iuSizYcHhqA7n6Exr8XbgU45OjaTMTM3a7mulclfZkm7zGmesQmCw/yzFK9rTAL1NWpEFE1phzBiJY4OMCzB1E9yGJKL49k60HB3i04rSWeceHAxQdvomRlFaWTjafvkUb0LlB3abs9rcuHOiJz82Sym4I94YIq05fxuuR18X5j7dIBD/LZM7ksUF/1JdRb+YFY=
+  on:
+    tags: true
+    branch: master
