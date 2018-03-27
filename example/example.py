@@ -13,13 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
-from elit.sdk import ElitSDK
+from elit.sdk import Component
 
 
 __author__ = "Gary Lai"
 
 
-class Example(ElitSDK):
+class Example(Component):
 
     def __init__(self):
         super().__init__()

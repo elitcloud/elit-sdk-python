@@ -18,7 +18,7 @@ import abc
 __author__ = "Gary Lai"
 
 
-class ElitSDK(abc.ABC):
+class Component(abc.ABC):
 
     @abc.abstractmethod
     def __init__(self):

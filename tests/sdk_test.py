@@ -14,14 +14,14 @@
 # limitations under the License.
 # ========================================================================
 import pytest
-from elit.sdk import ElitSDK
+from elit.sdk import Component
 
 __author__ = "Gary Lai"
 
 
 def test_sdk():
 
-    class TestSDK(ElitSDK):
+    class TestSDK(Component):
         pass
 
     with pytest.raises(TypeError):
@@ -30,7 +30,7 @@ def test_sdk():
 
 def test_abstract_class():
 
-    class TestSDK(ElitSDK):
+    class TestSDK(Component):
 
         def __init__(self):
             super(TestSDK, self).__init__()
