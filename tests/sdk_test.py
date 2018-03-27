@@ -14,7 +14,7 @@
 # limitations under the License.
 # ========================================================================
 import pytest
-from elitsdk.sdk import ElitSDK
+from elit.sdk import ElitSDK
 
 __author__ = "Gary Lai"
 

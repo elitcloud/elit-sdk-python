@@ -73,13 +73,13 @@ def get_version_info():
     FULLVERSION = VERSION
     if os.path.exists('.git'):
         GIT_REVISION = git_version()
-    elif os.path.exists('elitsdk/version.py'):
+    elif os.path.exists('elit/version.py'):
         # must be a source distribution, use existing version file
         try:
-            from elitsdk.version import git_revision as GIT_REVISION
+            from elit.version import git_revision as GIT_REVISION
         except ImportError:
             raise ImportError("Unable to import git_revision. Try removing "
-                              "elitsdk/version.py and the build directory "
+                              "elit/version.py and the build directory "
                               "before building.")
     else:
         GIT_REVISION = "Unknown"
@@ -90,7 +90,7 @@ def get_version_info():
     return FULLVERSION, GIT_REVISION
 
 
-def write_version_py(filename='elitsdk/version.py'):
+def write_version_py(filename='elit/version.py'):
     cnt = """
 # THIS FILE IS GENERATED FROM SCIPY SETUP.PY
 short_version = '%(version)s'
