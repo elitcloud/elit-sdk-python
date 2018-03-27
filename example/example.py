@@ -33,26 +33,29 @@ class Example(Component):
         """
         pass
 
-    def load_model(self, model_root, *args, **kwargs):
+    def load(self, model_path, *args, **kwargs):
         """
 
-        :param model_root:
+        :param model_path:
         :param args:
         :param kwargs:
         """
         pass
 
-    def train(self, *args, **kwargs):
+    def train(self, trn_data, dev_data, *args, **kwargs):
         """
 
+        :param trn_data:
+        :param dev_data:
         :param args:
         :param kwargs:
         """
         pass
 
-    def save_model(self, *args, **kwargs):
+    def save(self, model_path, *args, **kwargs):
         """
 
+        :param model_path:
         :param args:
         :param kwargs:
         """

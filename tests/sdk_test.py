@@ -38,14 +38,14 @@ def test_abstract_class():
         def decode(self, input_data, *args, **kwargs):
             super(TestSDK, self).decode(input_data, *args, **kwargs)
 
-        def load_model(self, model_root, *args, **kwargs):
-            super(TestSDK, self).load_model(model_root, *args, **kwargs)
+        def load(self, model_path, *args, **kwargs):
+            super(TestSDK, self).load(model_path, *args, **kwargs)
 
-        def train(self, *args, **kwargs):
-            super(TestSDK, self).train(*args, **kwargs)
+        def train(self, trn_data, dev_data, *args, **kwargs):
+            super(TestSDK, self).train(trn_data, dev_data, *args, **kwargs)
 
-        def save_model(self, *args, **kwargs):
-            super(TestSDK, self).save_model(*args, **kwargs)
+        def save(self, model_path, *args, **kwargs):
+            super(TestSDK, self).save(model_path, *args, **kwargs)
 
     with pytest.raises(NotImplementedError):
         test_task = TestSDK()

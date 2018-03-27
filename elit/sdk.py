@@ -36,11 +36,12 @@ class Component(abc.ABC):
         raise NotImplementedError("Not implemented")
 
     @abc.abstractmethod
-    def load_model(self, model_root, *args, **kwargs):
+    def load(self, model_path, *args, **kwargs):
         """
         Implement the method of how to load your model(s).
         If you don't need this method, leave it as pass.
-        :type model_root: str
+        :type model_path: str
+        :param model_path: root path of the model
         :param args: args for the load_model method if needed
         :param kwargs: kwargs for the load_model method if needed
         :return: None
@@ -48,10 +49,12 @@ class Component(abc.ABC):
         raise NotImplementedError("Not implemented")
 
     @abc.abstractmethod
-    def train(self, *args, **kwargs):
+    def train(self, trn_data, dev_data, *args, **kwargs):
         """
         Implement the train method.
         If you don't need this method, leave it as pass.
+        :param trn_data: training data
+        :param dev_data: developing data
         :param args: args for the load_model method if needed
         :param kwargs: kwargs for the load_model method if needed
         :return:
@@ -59,10 +62,12 @@ class Component(abc.ABC):
         raise NotImplementedError("Not implemented")
 
     @abc.abstractmethod
-    def save_model(self, *args, **kwargs):
+    def save(self, model_path, *args, **kwargs):
         """
         Implement the method of how to save your model(s).
         If you don't need this method, leave it as pass.
+        :type model_path: str
+        :param model_path: root path of the model
         :param args: args for the save_model method if needed
         :param kwargs: kwargs for the save_model method if needed
         :return:
