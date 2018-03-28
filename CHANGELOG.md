@@ -9,8 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 ### Removed
 
-## [0.1.0] - 
+## [0.0.2] - 
+### Added
+- Add Elit client
+
+## [0.0.1] - 
 ### Added
 - Init elitsdk project
 
-[Unreleased]: https://github.com/elitcloud/elit-sdk-python/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/elitcloud/elit-sdk-python/compare/v0.0.2...HEAD
