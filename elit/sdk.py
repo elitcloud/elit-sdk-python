@@ -18,11 +18,20 @@ import abc
 __author__ = "Gary Lai"
 
 
+class Model(object):
+
+    def __getattr__(self, key):
+        return self.__dict__[key]
+
+    def __setattr__(self, key, value):
+        self.__dict__[key] = value
+
+
 class Component(abc.ABC):
 
     @abc.abstractmethod
     def __init__(self):
-        pass
+        self.model = Model()
 
     @abc.abstractmethod
     def decode(self, input_data, *args, **kwargs):
@@ -73,3 +82,4 @@ class Component(abc.ABC):
         :return:
         """
         raise NotImplementedError("Not implemented")
+
