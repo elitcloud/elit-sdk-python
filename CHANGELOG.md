@@ -6,15 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- Model container
 ### Changed
+- Fix dependency for Elit Client (requests)
 ### Removed
 
-## [0.0.2] - 
+## [0.0.2] - [2018-03-28]
 ### Added
 - Add Elit client
 
-## [0.0.1] - 
+## [0.0.1] - [2018-03-25]
 ### Added
 - Init elitsdk project
 
-[Unreleased]: https://github.com/elitcloud/elit-sdk-python/compare/v0.0.2...HEAD
+[Unreleased]: https://github.com/elitcloud/elit-sdk-python/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/elitcloud/elit-sdk-python/compare/0.0.1...0.0.2
