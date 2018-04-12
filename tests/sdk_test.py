@@ -15,6 +15,7 @@
 # ========================================================================
 import pytest
 from elitsdk.sdk import Component
+from example.example import SpaceTokenizer
 
 __author__ = "Gary Lai"
 
@@ -50,3 +51,9 @@ def test_abstract_class():
     with pytest.raises(NotImplementedError):
         test_task = TestSDK()
         test_task.decode("test")
+
+def test_space_tokenizer():
+    space_tokenizer = SpaceTokenizer()
+    tokens, offset = space_tokenizer.decode("Hello, world")
+    assert tokens == ['Hello,', 'world']
+    assert offset == [(0, 6), (7, 12)]
