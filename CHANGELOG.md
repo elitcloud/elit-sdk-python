@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 ### Removed
 
-## [0.0.4]
+## [0.0.4] - [2018-04-12]
 ### Added
 - Add test for space tokenizer
 ### Changed
@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 - init from abc
 
-## [0.0.3]
+## [0.0.3] - [2018-04-12]
 ### Added
 - Model container
 ### Changed
