@@ -21,13 +21,6 @@ __author__ = "Gary Lai"
 class Component(abc.ABC):
 
     @abc.abstractmethod
-    def __init__(self):
-        """
-        Implement your initialization method here
-        """
-        raise NotImplementedError("Not implemented")
-
-    @abc.abstractmethod
     def decode(self, input_data, *args, **kwargs):
         """
         Implement the decode method.
