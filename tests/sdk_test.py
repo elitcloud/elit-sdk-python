@@ -14,7 +14,7 @@
 # limitations under the License.
 # ========================================================================
 import pytest
-from elit.sdk import Component
+from elitsdk.sdk import Component
 
 __author__ = "Gary Lai"
 

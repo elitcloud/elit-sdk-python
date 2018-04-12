@@ -455,5 +455,5 @@ paket-files/
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
-/elit/version.py
+/elitsdk/version.py
 /.pytest_cache/
