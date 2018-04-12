@@ -13,55 +13,65 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
+import abc
 from elitsdk.sdk import Component
 
 
 __author__ = "Gary Lai"
 
 
-class Example(Component):
+class Tokenizer(Component, abc.ABC):
 
-    def __init__(self):
-        super().__init__()
-
-    def decode(self, input_data, *args, **kwargs):
+    @abc.abstractmethod
+    def decode(self, input_data, offset=0, **kwargs):
         """
-
-        :param input_data:
-        :param args:
-        :param kwargs:
+        :param input_data: the input text.
+        :param offset: the starting offset.
+        :type input_data: str
+        :type offset: int
+        :return:
+            the tuple of (tokens, offsets[, custom values]*);
+            see the comments for Tokenizer.offsets() for more details about the offsets.
+        :rtype: (list of str, list of (int, int), *args)
         """
         pass
 
     def load(self, model_path, *args, **kwargs):
-        """
-
-        :param model_path:
-        :param args:
-        :param kwargs:
-        """
         pass
 
     def train(self, trn_data, dev_data, *args, **kwargs):
-        """
-
-        :param trn_data:
-        :param dev_data:
-        :param args:
-        :param kwargs:
-        """
         pass
 
     def save(self, model_path, *args, **kwargs):
-        """
-
-        :param model_path:
-        :param args:
-        :param kwargs:
-        """
         pass
 
+    @staticmethod
+    def offsets(input_data, tokens, offset=0):
+        """
+        :param input_data: the input text.
+        :param tokens: the list of tokens split from the input text.
+        :param offset:
+        :type input_data: str
+        :type tokens: list of str
+        :type offset: int
+        :return:
+            the list of (begin, end) offsets, where the begin (inclusive) and the end (exclusive) offsets indicate
+            the caret positions of the first and the last characters of the corresponding token, respectively.
+            e.g., text = 'Hello, world!', tokens = ['Hello', ',', 'world', '!'] -> [(0, 5), (5, 6), (7, 12), (12, 13)]
+        :rtype list of (int, int)
+        """
+        def get_offset(token):
+            nonlocal end
+            begin = input_data.index(token, end)
+            end = begin + len(token)
+            return begin + offset, end + offset
 
-if __name__ == '__main__':
-    example = Example()
-    example.decode("Hello, world")
+        end = 0
+        return [get_offset(token) for token in tokens]
+
+
+class SpaceTokenizer(Tokenizer):
+
+    def decode(self, input_data, offset=0, **kwargs):
+        tokens = input_data.split()
+        return tokens, self.offsets(input_data, tokens, offset)
