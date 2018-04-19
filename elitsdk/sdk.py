@@ -15,7 +15,7 @@
 # ========================================================================
 # -*- coding: utf-8 -*-
 """
-.. module:: sdk
+.. module:: elitsdk.sdk
    :synopsis: The ELIT software development kit.
 .. moduleauthor:: Gary Lai
 """
