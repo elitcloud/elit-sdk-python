@@ -1,6 +1,6 @@
 SDK
 =========================
 
-.. automodule:: sdk
+.. automodule:: elitsdk.sdk
    :members:
    :noindex:
