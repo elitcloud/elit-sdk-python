@@ -1,8 +1,8 @@
 # elit-sdk-python
 
 [![Build Status](https://travis-ci.org/elitcloud/elit-sdk-python.svg?branch=master)](https://travis-ci.org/elitcloud/elit-sdk-python)
-
-[![PyPI version](https://badge.fury.io/py/elitsdk.svg)](https://badge.fury.io/py/elitsdk) 
+[![PyPI version](https://badge.fury.io/py/elitsdk.svg)](https://badge.fury.io/py/elitsdk)
+[![Documentation Status](https://readthedocs.org/projects/elitsdk/badge/?version=latest)](http://elitsdk.readthedocs.io/en/latest/?badge=latest)
 
 This repository is the elit SDK for python language. Your NLP tools implemented the abstract class and method of this SDK can be hosted on [elit.cloud](https://elit.cloud).
 
