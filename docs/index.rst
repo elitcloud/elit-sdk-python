@@ -10,7 +10,7 @@ Welcome to elitsdk's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   sdk
 
 Indices and tables
 ==================

@@ -13,21 +13,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
+# -*- coding: utf-8 -*-
+"""
+.. module:: sdk
+   :synopsis: The ELIT software development kit.
+.. moduleauthor:: Gary Lai
+"""
+
 import abc
 
 __author__ = "Gary Lai"
 
 
 class Component(abc.ABC):
+    """
+    Component is an abstract class. To deploy your method to the ELIT service,
+    your class must be implemented by inheriting this class.
+    """
 
     @abc.abstractmethod
     def decode(self, input_data, *args, **kwargs):
         """
         Implement the decode method.
+
         :param input_data: expect input for the decode function
         :param args: args for the decode method if needed
         :param kwargs: kwargs for the decode method if needed
-        :return:
+        :return: result of your decode method
+        :rtype: dict
         """
         raise NotImplementedError("Not implemented")
 
@@ -36,11 +49,11 @@ class Component(abc.ABC):
         """
         Implement the method of how to load your model(s).
         If you don't need this method, leave it as pass.
+
         :type model_path: str
         :param model_path: root path of the model
         :param args: args for the load_model method if needed
         :param kwargs: kwargs for the load_model method if needed
-        :return: None
         """
         raise NotImplementedError("Not implemented")
 
@@ -49,11 +62,11 @@ class Component(abc.ABC):
         """
         Implement the train method.
         If you don't need this method, leave it as pass.
+
         :param trn_data: training data
         :param dev_data: developing data
         :param args: args for the load_model method if needed
         :param kwargs: kwargs for the load_model method if needed
-        :return:
         """
         raise NotImplementedError("Not implemented")
 
@@ -62,11 +75,10 @@ class Component(abc.ABC):
         """
         Implement the method of how to save your model(s).
         If you don't need this method, leave it as pass.
+
         :type model_path: str
         :param model_path: root path of the model
         :param args: args for the save_model method if needed
         :param kwargs: kwargs for the save_model method if needed
-        :return:
         """
         raise NotImplementedError("Not implemented")
-
