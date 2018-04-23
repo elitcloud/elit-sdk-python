@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Add Node class
 - Add SDK doc on read the doc
+- Doc for Node
+- Doc for Client
 ### Changed
 ### Removed
 
