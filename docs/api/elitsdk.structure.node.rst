@@ -1,5 +1,5 @@
 elitsdk.structure.node module
-===================
+=============================
 
 .. automodule:: elitsdk.structure.node
     :members:
