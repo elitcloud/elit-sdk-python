@@ -18,12 +18,18 @@ import requests
 __author__ = "Gary Lai"
 
 
-# We should call it Client.
 class Client(object):
     def __init__(self):
         self.server_url = "https://elit.cloud/api"
 
     def decode(self, payload):
+        """
+
+        :type payload: dict
+        :param payload:
+        :return: result from given payload
+        :rtype: json
+        """
         url = '{}/{}/{}'.format(self.server_url, 'public', 'decode')
 
         r = requests.post(url, json=payload)

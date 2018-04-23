@@ -1,10 +1,18 @@
 API documentation
 =================
 
-Core API
+Component
+---------
+
+.. automodule:: elitsdk.sdk
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Client
 --------
 
-.. automodule:: elitsdk
+.. automodule:: elitsdk.api
     :members:
     :undoc-members:
     :show-inheritance:
