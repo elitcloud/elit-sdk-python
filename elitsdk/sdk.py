@@ -95,5 +95,4 @@ class Component(abc.ABC):
         tic = time.time()
         self.decode(input_data, *args, **kwargs)
         toc = time.time()
-        re = toc - tic
-        return re
+        return toc - tic
