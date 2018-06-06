@@ -60,11 +60,16 @@ def test_abstract_class():
 def test_space_tokenizer():
     space_tokenizer = SpaceTokenizer()
     tokens, offset = space_tokenizer.decode("Hello, world")
-    
-    time1 = space_tokenizer.benchmark("Hello, world")
-    time2 = space_tokenizer.benchmark("This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers.")
-    print(time1,time2)
     assert tokens == ['Hello,', 'world']
     assert offset == [(0, 6), (7, 12)]
-    assert isinstance(time2,float)==True
-    assert time2 > time1
+
+
+def test_benchmark():
+    space_tokenizer = SpaceTokenizer()
+    time1 = space_tokenizer.benchmark("Hello, world")
+    time2 = space_tokenizer.benchmark("This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers.")
+
+    assert isinstance(time1, float)
+    assert isinstance(time2, float)
+    assert time1 > 0.0
+    assert time2 > 0.0
