@@ -86,6 +86,7 @@ class Component(abc.ABC):
     def benchmark(self, input_data, *args, **kwargs):
         """
         Implement the method of testing the time used by your decode model.
+
         :param input_data: expect input for the benchmark function
         :param args: args for the benchmark method if needed
         :param kwargs: kwargs for the benchmark method if needed
