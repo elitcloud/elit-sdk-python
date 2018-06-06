@@ -82,7 +82,7 @@ class Component(abc.ABC):
         :param kwargs: kwargs for the save_model method if needed
         """
         raise NotImplementedError("Not implemented")
-    @abc.abstractmethod
+
     def benchmark(self, input_data, *args, **kwargs):
         """
         Implement the method of testing the time used by your decode model.
