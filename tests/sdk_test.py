@@ -47,6 +47,7 @@ def test_abstract_class():
 
         def save(self, model_path, *args, **kwargs):
             super(TestSDK, self).save(model_path, *args, **kwargs)
+
         def benchmark(self, input_data, *args, **kwargs):
             super(TestSDK, self).benchmark(input_data, *args, **kwargs)
         
@@ -54,6 +55,7 @@ def test_abstract_class():
         test_task = TestSDK()
         test_task.decode("test")
         test_task.benchmark("test")
+
 
 def test_space_tokenizer():
     space_tokenizer = SpaceTokenizer()
