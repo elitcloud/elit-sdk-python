@@ -44,7 +44,13 @@ class Tokenizer(Component, abc.ABC):
 
     def save(self, model_path, *args, **kwargs):
         pass
-
+    def benchmark(self, input_data, offset=0, **kwargs):
+        return super(Tokenizer, self).benchmark(input_data, offset=0, **kwargs)
+        #tic = time.clock()
+        #self.decode(input_data, offset=0, **kwargs)
+        #toc = time.clock()
+        #re = toc - tic
+        #return re
     @staticmethod
     def offsets(input_data, tokens, offset=0):
         """

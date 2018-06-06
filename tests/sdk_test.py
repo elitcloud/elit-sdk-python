@@ -47,13 +47,22 @@ def test_abstract_class():
 
         def save(self, model_path, *args, **kwargs):
             super(TestSDK, self).save(model_path, *args, **kwargs)
-
+        def benchmark(self, input_data, *args, **kwargs):
+            super(TestSDK, self).benchmark(input_data, *args, **kwargs)
+        
     with pytest.raises(NotImplementedError):
         test_task = TestSDK()
         test_task.decode("test")
+        test_task.benchmark("test")
 
 def test_space_tokenizer():
     space_tokenizer = SpaceTokenizer()
     tokens, offset = space_tokenizer.decode("Hello, world")
+    
+    time1 = space_tokenizer.benchmark("Hello, world")
+    time2 = space_tokenizer.benchmark("This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers.")
+    print(time1,time2)
     assert tokens == ['Hello,', 'world']
     assert offset == [(0, 6), (7, 12)]
+    assert isinstance(time2,float)==True
+    assert time2 > time1
