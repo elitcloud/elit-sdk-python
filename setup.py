@@ -125,9 +125,7 @@ def setup_package():
         description='The Emory Language Information Toolkit (ELIT).',
         license='ALv2',
         packages=find_packages(exclude=EXCLUDE_FROM_PACKAGES),
-        install_requires=[
-            'requests'
-        ],
+        install_requires=[],
         tests_require=[
             'pytest',
         ],

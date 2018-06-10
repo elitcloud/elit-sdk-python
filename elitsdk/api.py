@@ -13,7 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
-import requests
+import http.client
+import json
 
 __author__ = "Gary Lai"
 
@@ -21,6 +22,7 @@ __author__ = "Gary Lai"
 class Client(object):
     def __init__(self):
         self.server_url = "https://elit.cloud/api"
+        self.endpoint = '{}/{}'.format('public', 'decode')
 
     def decode(self, payload):
         """
@@ -30,14 +32,17 @@ class Client(object):
         :return: result from given payload
         :rtype: json
         """
-        url = '{}/{}/{}'.format(self.server_url, 'public', 'decode')
 
-        r = requests.post(url, json=payload)
-
-        if r.status_code:
-            return r.json()
+        params = json.dumps(payload)
+        headers = {'Content-type': 'application/json'}
+        connection = http.client.HTTPConnection(self.server_url)
+        connection.request("POST", self.endpoint, params, headers)
+        response = connection.getresponse()
+        result = response.read()
+        if response.status == 200:
+            return json.loads(result)
         else:
             return {
-                'status': r.status_code,
-                'message': r.text
+                'status': response.status,
+                'message': result
             }
