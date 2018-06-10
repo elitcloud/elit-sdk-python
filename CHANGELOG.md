@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 ### Removed
 
+## [0.0.6] - [2018-06-10]
+### Added
+### Changed
+### Removed
+- Dep: requests
+
 ## [0.0.5] - [2018-06-07]
 ### Added
 - Add Node class
