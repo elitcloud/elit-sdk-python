@@ -90,10 +90,10 @@ class Component(abc.ABC):
         :param input_data: expect input for the benchmark function
         :param args: args for the benchmark method if needed
         :param kwargs: kwargs for the benchmark method if needed
-        :return: second used by the decode model
+        :return: result and second used by the decode model
         :rtype: float
         """
         tic = time.time()
-        self.decode(input_data, *args, **kwargs)
+        result = self.decode(input_data, *args, **kwargs)
         toc = time.time()
-        return toc - tic
+        return result, toc - tic
