@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 ### Changed
+- Return result in benchmark function for benchmarking pipeline.
 ### Removed
 
 ## [0.0.6] - [2018-06-10]
