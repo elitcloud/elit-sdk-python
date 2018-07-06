@@ -22,6 +22,7 @@
 
 import abc
 import time
+
 __author__ = "Gary Lai"
 
 
@@ -83,10 +84,11 @@ class Component(abc.ABC):
         """
         raise NotImplementedError("Not implemented")
 
-    def benchmark(self, input_data, *args, **kwargs):
+    def benchmark(self, input_data, func="decode", *args, **kwargs):
         """
         Implement the method of testing the time used by your decode model.
 
+        :param func: which function is benchmarking
         :param input_data: expect input for the benchmark function
         :param args: args for the benchmark method if needed
         :param kwargs: kwargs for the benchmark method if needed
@@ -94,6 +96,6 @@ class Component(abc.ABC):
         :rtype: float
         """
         tic = time.time()
-        result = self.decode(input_data, *args, **kwargs)
+        result = getattr(self, func)(input_data, *args, **kwargs)
         toc = time.time()
         return result, toc - tic
