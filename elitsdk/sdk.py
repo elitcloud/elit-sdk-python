@@ -29,6 +29,20 @@ class Component(abc.ABC):
     """
     Component is an abstract class. To deploy your method to the ELIT service,
     your class must be implemented by inheriting this class.
+
+    Example:
+
+        >>> class Example(Component):
+        >>>     def decode(self, input_data, *args, **kwargs):
+        >>>         pass
+        >>>     def load(self, model_path, *args, **kwargs):
+        >>>         pass
+        >>>     def train(self, trn_data, dev_data, *args, **kwargs):
+        >>>         pass
+        >>>     def save(self, model_path, *args, **kwargs):
+        >>>         pass
+
+
     """
 
     @abc.abstractmethod

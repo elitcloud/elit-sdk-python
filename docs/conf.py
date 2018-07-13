@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'elitsdk'
+project = 'Elit SDK'
 copyright = '2018, Gary Lai'
 author = 'Gary Lai'
 
