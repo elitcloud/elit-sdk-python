@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 ### Changed
+- Change benchmark function. Use context manager to monitor time elapsed. 
+- Improve docs of sdk and benchmark
 ### Removed
 
 ## [0.0.7] - [2018-07-06]
