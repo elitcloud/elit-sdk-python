@@ -21,12 +21,12 @@ See http://elitsdk.rtfd.io for documentation.
 """
 
 from __future__ import absolute_import
-from .sdk import Component
-from .api import Client
+from . import sdk, api, benchmark
 
 __author__ = "Gary Lai"
 
 __all__ = [
-    'Component',
-    'Client'
+    'sdk',
+    'api',
+    'benchmark'
 ]

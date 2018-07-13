@@ -13,12 +13,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ========================================================================
+# -*- coding: utf-8 -*-
+"""
+.. module:: elitsdk.benchmark
+   :synopsis: The ELIT software development kit.
+.. moduleauthor:: Gary Lai
+"""
 import timeit
 
 __author__ = "Gary Lai"
 
 
 class Timer(object):
+    """
+    Timer is an context manager measures elapsed time of running function or process.
+
+    Example:
+
+    >>> from elitsdk.benchmark import Timer
+    >>> from example.example import SpaceTokenizer
+    >>> space_tokenizer = SpaceTokenizer()
+    >>> with Timer() as t:
+    >>>     space_tokenizer.decode("hello world")
+    >>> print(t.runtime)
+    
+    """
     def __init__(self, timer=timeit.default_timer):
         self.timer = timer
         self.start = None

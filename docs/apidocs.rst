@@ -9,6 +9,14 @@ Component
     :undoc-members:
     :show-inheritance:
 
+Benchmark
+---------
+
+.. automodule:: elitsdk.benchmark
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 Client
 --------
 
