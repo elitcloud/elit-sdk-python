@@ -16,7 +16,6 @@
 import abc
 from elitsdk.sdk import Component
 
-
 __author__ = "Gary Lai"
 
 

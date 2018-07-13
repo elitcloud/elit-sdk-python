@@ -14,6 +14,8 @@
 # limitations under the License.
 # ========================================================================
 import pytest
+
+from elitsdk.benchmark import Timer
 from elitsdk.sdk import Component
 from example.example import SpaceTokenizer
 
@@ -26,7 +28,7 @@ def test_sdk():
         pass
 
     with pytest.raises(TypeError):
-        test_task = TestSDK()
+        TestSDK()
 
 
 def test_abstract_class():
@@ -47,14 +49,10 @@ def test_abstract_class():
 
         def save(self, model_path, *args, **kwargs):
             super(TestSDK, self).save(model_path, *args, **kwargs)
-
-        def benchmark(self, input_data, *args, **kwargs):
-            super(TestSDK, self).benchmark(input_data, *args, **kwargs)
         
     with pytest.raises(NotImplementedError):
         test_task = TestSDK()
         test_task.decode("test")
-        test_task.benchmark("test")
 
 
 def test_space_tokenizer():
@@ -66,10 +64,12 @@ def test_space_tokenizer():
 
 def test_benchmark():
     space_tokenizer = SpaceTokenizer()
-    result1, time1 = space_tokenizer.benchmark("Hello, world")
-    result2, time2 = space_tokenizer.benchmark("This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers.")
+    with Timer() as time1:
+        space_tokenizer.decode("Hello, world")
+    with Timer() as time2:
+        space_tokenizer.decode("This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers.")
 
-    assert isinstance(time1, float)
-    assert isinstance(time2, float)
-    assert time1 > 0.0
-    assert time2 > 0.0
+    assert isinstance(time1.runtime, float)
+    assert isinstance(time2.runtime, float)
+    assert time1.runtime > 0.0
+    assert time2.runtime > 0.0
