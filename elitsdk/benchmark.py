@@ -28,14 +28,14 @@ class Timer(object):
     """
     Timer is an context manager measures elapsed time of running function or process.
 
-    Example:
+    Example::
 
-    >>> from elitsdk.benchmark import Timer
-    >>> from example.example import SpaceTokenizer
-    >>> space_tokenizer = SpaceTokenizer()
-    >>> with Timer() as t:
-    >>>     space_tokenizer.decode("hello world")
-    >>> print(t.runtime)
+        from elitsdk.benchmark import Timer
+        from example.example import SpaceTokenizer
+        space_tokenizer = SpaceTokenizer()
+        with Timer() as t:
+            space_tokenizer.decode("hello world")
+        print(t.runtime)
     
     """
     def __init__(self, timer=timeit.default_timer):
