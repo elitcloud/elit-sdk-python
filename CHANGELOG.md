@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- Add model_path as a new argument to train
 ### Changed
 - Change benchmark function. Use context manager to monitor time elapsed. 
 - Improve docs of sdk and benchmark
+- Update inheritance syntax. Use python 3 style
+- Update SDK Component structure
 ### Removed
 
 ## [0.0.7] - [2018-07-06]
