@@ -21,6 +21,9 @@ __author__ = "Gary Lai"
 
 class Tokenizer(Component, abc.ABC):
 
+    def init(self):
+        pass
+
     @abc.abstractmethod
     def decode(self, input_data, offset=0, **kwargs):
         """
@@ -35,13 +38,13 @@ class Tokenizer(Component, abc.ABC):
         """
         pass
 
-    def load(self, model_path, *args, **kwargs):
+    def load(self, model_path, **kwargs):
         pass
 
-    def train(self, trn_data, dev_data, *args, **kwargs):
+    def train(self, trn_data, dev_data, model_path, **kwargs):
         pass
 
-    def save(self, model_path, *args, **kwargs):
+    def save(self, model_path, **kwargs):
         pass
 
     @staticmethod
