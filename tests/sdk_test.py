@@ -36,22 +36,22 @@ def test_abstract_class():
     class TestSDK(Component):
 
         def __init__(self):
-            super(TestSDK, self).__init__()
+            super().__init__()
 
         def init(self):
-            pass
+            super().init()
 
         def decode(self, input_data, **kwargs):
-            super(TestSDK, self).decode(input_data, **kwargs)
+            super().decode(input_data, **kwargs)
 
         def load(self, model_path, **kwargs):
-            super(TestSDK, self).load(model_path, **kwargs)
+            super().load(model_path, **kwargs)
 
         def train(self, trn_data, dev_data, model_path, **kwargs):
-            super(TestSDK, self).train(trn_data, dev_data, model_path, **kwargs)
+            super().train(trn_data, dev_data, model_path, **kwargs)
 
         def save(self, model_path, **kwargs):
-            super(TestSDK, self).save(model_path, **kwargs)
+            super().save(model_path, **kwargs)
         
     with pytest.raises(NotImplementedError):
         test_task = TestSDK()
