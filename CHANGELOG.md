@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+### Changed
+### Removed
+
+## [0.0.8] - [2018-07-17]
+### Added
 - Add model_path as a new argument to train
 ### Changed
 - Change benchmark function. Use context manager to monitor time elapsed. 
